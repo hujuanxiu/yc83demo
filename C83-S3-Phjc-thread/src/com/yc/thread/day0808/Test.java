@@ -1,12 +1,21 @@
 package com.yc.thread.day0808;
 
 import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 //只用注解的注解来限定该注解被标注的位置
 @Target(value= {ElementType.METHOD,
-		ElementType.LOCAL_VARIABLE})
+		ElementType.LOCAL_VARIABLE,
+		ElementType.TYPE})
+//持久性设置
+//源代码阶段
+//编译期阶段
+//运行期阶段
+@Retention(RetentionPolicy.RUNTIME)
 public @interface Test {
 
+	String value() default "";
 	
 }
 
